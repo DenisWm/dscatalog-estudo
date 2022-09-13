@@ -3,12 +3,15 @@ package com.denisw.dscatalog.dto;
 import com.denisw.dscatalog.entities.Category;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 public class CategoryDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
     private String name;
+
+    private Instant created_At;
 
     public CategoryDTO() {
     }

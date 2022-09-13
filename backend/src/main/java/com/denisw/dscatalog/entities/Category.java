@@ -2,7 +2,10 @@ package com.denisw.dscatalog.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.Instant;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_category")
@@ -12,6 +15,9 @@ public class Category implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    private Instant created_At;
+
 
     public Category() {
     }
