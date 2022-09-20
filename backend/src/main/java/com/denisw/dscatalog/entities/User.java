@@ -78,11 +78,6 @@ public class User implements UserDetails, Serializable {
         this.email = email;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getAuthority())).collect(Collectors.toList());
-    }
-
     public String getPassword() {
         return password;
     }
@@ -90,6 +85,11 @@ public class User implements UserDetails, Serializable {
     @Override
     public String getUsername() {
         return email;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getAuthority())).collect(Collectors.toList());
     }
 
     @Override
